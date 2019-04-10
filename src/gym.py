@@ -6,6 +6,10 @@ MAX_GYM_TIME_MIN = 180
 last_trigger_time = None
 
 def trigger_gym_geofence():
+    global last_trigger_time
+    global MIN_GYM_TIME_MIN
+    global MAX_GYM_TIME_MIN
+
     trigger_time = datetime.now()
 
     if last_trigger_time is None:
@@ -25,6 +29,8 @@ def trigger_gym_geofence():
         return "Work out more"
 
 def reset_box():
+    global last_trigger_time
+
     close_box()
     last_trigger_time = None
 
